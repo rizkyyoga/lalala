@@ -23,6 +23,7 @@ class buy extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->helper('form');
 		$this->load->model('film');
+		$this->load->model('pemesanan');
 	}
 
 	public function index()
@@ -33,6 +34,8 @@ class buy extends CI_Controller {
 	function ticket($id)
 	{
 		$data['film']=$this->film->select_by_id($id)->result();
+		$data['tayang']=$this->pemesanan->select_now_tayang_by_id($id)->result();
+		$data['kursi']=$this->pemesanan->select_kursi_available($id)->result();
 		$this->load->view('buy',$data);
 	}
 }
