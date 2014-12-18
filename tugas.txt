@@ -1,0 +1,9 @@
+tugas
+-registrasi member
+-login member
+-now playing and coming soon
+-home
+-log out memberr
+-form beli tiket
+-check out
+-profile member
